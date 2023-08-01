@@ -1,19 +1,13 @@
-Напиши скрипт, який:
 
-Порахує і виведе в консоль кількість категорій в ul#categories, тобто елементів li.item.
-Для кожного элемента li.item у списку ul#categories, знайде і виведе в консоль текст заголовку елемента(тегу < h2 >) і кількість елементів в категорії(усіх < li >, вкладених в нього).
+const numbCategories = document.querySelectorAll('.item');
 
-Для виконання цього завдання потрібно використати метод forEach() і властивості навігації по DOM.
+console.log(`Number of categories : ${numbCategories.length}`);
 
-В результаті, в консолі будуть виведені наступні повідомлення.
+numbCategories.forEach(function (number) {
+    console.log(`Category: ${number.firstElementChild.textContent}`);
 
-Number of categories: 3
+    console.log(`Elements: ${number.querySelectorAll('li').length}`);
 
-Category: Animals
-Elements: 4
+})
 
-Category: Products
-Elements: 3
 
-Category: Technologies
-Elements: 5
